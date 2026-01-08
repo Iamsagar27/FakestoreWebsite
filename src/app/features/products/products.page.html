@@ -1,0 +1,160 @@
+<app-header></app-header>
+
+<section class="shop-page">
+  <div class="shop-hero">
+    <h1>Shop</h1>
+    <p><b>Home</b> <span class="material-symbols-outlined">chevron_right</span> Shop</p>
+  </div>
+
+  <div class="shop-toolbar">
+    <div class="toolbar-left">
+      <button class="filter-btn" (click)="toggleFilter()">
+        <span class="material-symbols-outlined">tune</span>
+        Filter
+      </button>
+
+      <div class="view-icons">
+        <span class="material-symbols-rounded">view_cozy</span>
+        <span class="material-symbols-rounded">view_day</span>
+      </div>
+      <span class="results-text">Showing 1–16 of 32 results</span>
+    </div>
+
+    <div class="toolbar-right">
+      <div class="select-group">
+        <label>Show</label>
+        <select>
+          <option>16</option>
+          <option>32</option>
+        </select>
+      </div>
+
+      <div class="select-group">
+        <label>Sort by</label>
+        <select>
+          <option>Default</option>
+          <option>Price</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-panel" *ngIf="showFilter">
+    <app-loader *ngIf="loading"></app-loader>
+    <div class="filter-grid" *ngIf="!loading">
+      <div class="filter-group">
+        <h4>Categories</h4>
+        <div *ngFor="let cat of categories" class="filter-item">
+        <label class="checkbox-label">
+          <input
+            type="checkbox"
+            [value]="cat"
+            (change)="onCategoryChange($event)"
+            [checked]="tempSelectedCategories.includes(cat)"
+          />
+          {{ cat | titlecase }}
+        </label>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <h4>Price</h4>
+      <label><input type="checkbox"> ₹0 – ₹999</label>
+      <label><input type="checkbox"> ₹1000 – ₹1999</label>
+      <label><input type="checkbox"> ₹2000+</label>
+    </div>
+
+    <div class="filter-group">
+      <h4>Size</h4>
+      <div class="size-options">
+        <span>S</span>
+        <span>M</span>
+        <span>L</span>
+        <span>XL</span>
+      </div>
+    </div>
+
+    <div class="filter-group close">
+      <h4><span class="material-symbols-outlined" (click)="showFilter = false">close</span></h4>
+    </div>
+  </div>
+
+  <div class="filter-actions">
+    <button class="clear-btn" (click)="clearFilters()">Clear All</button>
+    <button class="apply-btn" (click)="applyFilters()">Apply Filters</button>
+  </div>
+</div>
+
+
+</section>
+
+<app-product-card
+  #pc="productCard"
+  [categories]="selectedCategories">
+
+  <div class="pagination" *ngIf="pc.totalPages > 1">
+    <button
+      class="page-btn"
+      [disabled]="pc.currentPage === 1"
+      (click)="pc.setPage(pc.currentPage - 1)">
+      Prev
+    </button>
+
+    <button
+      class="page-btn"
+      *ngFor="let p of [].constructor(pc.totalPages); let i = index"
+      [class.active]="pc.currentPage === i + 1"
+      (click)="pc.setPage(i + 1)">
+      {{ i + 1 }}
+    </button>
+
+    <button
+      class="page-btn"
+      [disabled]="pc.currentPage === pc.totalPages"
+      (click)="pc.setPage(pc.currentPage + 1)">
+      Next
+    </button>
+  </div>
+
+</app-product-card>
+
+
+
+<section class="features">
+  <div class="features-container">
+    <div class="feature-item">
+      <span class="material-symbols-outlined">trophy</span>
+      <div>
+        <h4>High Quality</h4>
+        <p>crafted from top materials</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <span class="material-symbols-outlined">verified</span>
+      <div>
+        <h4>Warranty Protection</h4>
+        <p>Over 2 years</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <span class="material-symbols-outlined">local_shipping</span>
+      <div>
+        <h4>Free Shipping</h4>
+        <p>Order over 150 $</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <span class="material-symbols-outlined">support_agent</span>
+      <div>
+        <h4>24 / 7 Support</h4>
+        <p>Dedicated support</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,113 @@
+<app-header></app-header>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="tag">New Arrival</span>
+
+    <h1>
+      Discover Our <br />
+      New Collection
+    </h1>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut elit tellus, luctus nec ullamcorper mattis.
+    </p>
+
+    <button>BUY NOW</button>
+  </div>
+</section>
+
+<section class="range">
+  <h2>Browse The Range</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+  <div class="range-grid">
+    <div class="range-card">
+      <img src="assets/Dinning.png" />
+      <span>Dining</span>
+    </div>
+
+    <div class="range-card">
+      <img src="assets/Living.png" />
+      <span>Living</span>
+    </div>
+
+    <div class="range-card">
+      <img src="assets/Bedroom.png" />
+      <span>Bedroom</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="products">
+  <h2>Our Products</h2>
+  <app-product-card></app-product-card>
+  <app-loader  [show]="loading"></app-loader>
+  <div class="show-more-wrapper">
+    <button class="show-more-btn" (click)="onShowMore()">Show More</button>
+  </div>
+</section>
+
+<section class="rooms">
+  <div class="rooms-container">
+    <div class="rooms-content">
+      <h2>50+ Beautiful rooms inspiration</h2>
+      <p>Our designer already made a lot of beautiful prototype of rooms that inspire you</p>
+      <button class="explore-btn">Explore More</button>
+    </div>
+
+    <div class="rooms-images">
+      <div class="rooms-main">
+        <img src="assets/Rooms/Room1.png" />
+        <div class="room-overlay">
+          <span>01 — Bed Room</span>
+          <h3>Inner Peace</h3>
+        </div>
+        <button class="arrow-btn">→</button>
+      </div>
+
+      <img class="side-img" src="assets/Rooms/Room2.png" />
+      <img class="side-img" src="assets/Rooms/Room3.png" />
+      <div class="dots"> <span class="active"></span> <span></span> <span></span> </div>
+
+      <button class="next-btn">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<section class="funiro">
+  <div class="funiro-container">
+    <div class="funiro-header">
+      <span>Share your setup with</span>
+      <h2>#FuniroFurniture</h2>
+    </div>
+    <div class="funiro-canvas">
+      <img src="assets/SetupImages/Setup1.png" class="img setup1">
+      <img src="assets/SetupImages/Setup6.png" class="img setup2">
+
+      <img src="assets/SetupImages/Setup2.png" class="img setup3">
+      <img src="assets/SetupImages/Setup7.png" class="img setup4">
+
+      <img src="assets/SetupImages/Setup3.png" class="img setup5">
+
+      <img src="assets/SetupImages/Setup4.png" class="img setup6">
+      <img src="assets/SetupImages/Setup8.png" class="img setup7">
+
+      <img src="assets/SetupImages/Setup5.png" class="img setup8">
+      <img src="assets/SetupImages/Setup9.png" class="img setup9">
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>
+
+
+
+
+
+

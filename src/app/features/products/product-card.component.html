@@ -1,0 +1,55 @@
+<app-loader [show]="loading"></app-loader>
+<section class="products" [class.related-products-mode]="related">
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let p of products" (click)="openProduct(p.id)">
+      <div class="image-wrapper">
+        <img [src]="p.image" />
+
+        <span
+          class="badge"
+          *ngIf="p.discount"
+          [ngClass]="{
+            'badge-discount': p.discount !== 'New',
+            'badge-new': p.discount === 'New'
+          }"
+        >
+          {{ p.discount }}
+        </span>
+
+        <div class="hover-overlay">
+          <button class="add-cart-btn" (click)="addToCart(p, $event)">Add to cart</button>
+
+          <div class="hover-icons">
+            <div class="icon-item" (click)="$event.stopPropagation()">
+              <span class="material-symbols-outlined">share</span>
+              <span class="icon-text">Share</span>
+            </div>
+
+            <div class="icon-item" (click)="$event.stopPropagation()">
+              <span class="material-symbols-outlined">compare_arrows</span>
+              <span class="icon-text">Compare</span>
+            </div>
+
+            <div class="icon-item" (click)="$event.stopPropagation()">
+              <span class="material-symbols-outlined">favorite_border</span>
+              <span class="icon-text">Like</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.category }}</p>
+
+        <div class="price">
+          <span class="current">Rs {{ p.price }}</span>
+          <span class="old" *ngIf="p.oldPrice">
+            Rs {{ p.oldPrice }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<ng-content></ng-content>
+</section>

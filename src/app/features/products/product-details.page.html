@@ -1,0 +1,118 @@
+<app-loader [show]="loading"></app-loader>
+<app-header></app-header>
+
+<div class="breadcrumb">
+  <span class="home">Home</span>
+  <span>›</span>
+  <span>Shop</span>
+  <span>›</span>
+  <span class="product-name">{{ product?.title }}</span>
+</div>
+
+<section class="product-details" *ngIf="product">
+  <div class="images-section">
+    <div class="thumbs">
+      <img [src]="product.image" />
+      <img [src]="product.image" />
+      <img [src]="product.image" />
+      <img [src]="product.image" />
+    </div>
+
+    <div class="main-image">
+      <img [src]="product.image" />
+    </div>
+  </div>
+
+  <div class="details-section">
+    <h1>{{ product.title }}</h1>
+    <p class="price">Rs. {{ product.price }}</p>
+
+    <div class="rating">
+      <span class="stars" [style.--rating]="product.rating.rate">★★★★★</span>
+      <span class="reviews">{{product.rating.count}} Customer Review</span>
+    </div>
+
+    <p class="description">
+      {{ product.description }}
+    </p>
+
+    <div class="option-group">
+      <label>Size</label>
+      <div class="options">
+        <button class="active">L</button>
+        <button>XL</button>
+        <button>XS</button>
+      </div>
+    </div>
+
+    <div class="option-group">
+      <label>Color</label>
+      <div class="colors">
+        <span class="color purple"></span>
+        <span class="color black"></span>
+        <span class="color gold"></span>
+      </div>
+    </div>
+
+   <div class="actions">
+    <div class="qty">
+      <button (click)="decreaseQty()">−</button>
+      <span>{{ quantity }}</span>
+      <button (click)="increaseQty()">+</button>
+    </div>
+
+    <button class="btn primary" (click)="addToCart()">Add To Cart</button>
+    <button class="btn outline">+ Compare</button>
+  </div>
+
+
+    <hr class="line" />
+
+    <div class="meta">
+      <p><span>SKU</span> : SS001</p>
+      <p><span>Category</span> : {{product.category}}</p>
+      <p><span>Tags</span> : {{product.category}} </p>
+      <p class="share">
+        <span>Share</span> :
+        <i ><img src="assets/facebook.png" /></i>
+        <i class="icon"><img src="assets/linkedin.png" /></i>
+        <i class="icon"><img src="assets/twitter.png" /></i>
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="line" />
+
+<section class="product-details-extra">
+  <div class="product-tabs">
+    <button class="tab active">Description</button>
+    <button class="tab">Additional Information</button>
+    <button class="tab">Reviews [5]</button>
+  </div>
+
+  <div class="tab-content description active">
+    <p>
+      {{ product?.description }}
+    </p>
+
+    <div class="description-images">
+      <div class="image-box">
+        <img [src]="product.image" alt="Sofa view 1" />
+      </div>
+      <div class="image-box">
+        <img [src]="product.image" alt="Sofa view 2" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="line" />
+
+<section class="related-products">
+  <h2 class="section-title">Related Products</h2>
+    <app-product-card [limit]="4" [related]="true"></app-product-card>
+  <button class="show-more-btn" routerLink="/products">Show More</button>
+</section>
+
+<app-footer></app-footer>

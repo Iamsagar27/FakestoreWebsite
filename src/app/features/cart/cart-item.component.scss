@@ -1,0 +1,39 @@
+.cart-item {
+  display: flex;
+  gap: 16px;
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 16px;
+  align-items: center;
+
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  .details {
+    flex: 1;
+
+    h4 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    p {
+      margin-bottom: 8px;
+      color: #b88e2f;
+    }
+
+    select {
+      padding: 6px;
+    }
+  }
+
+  .remove {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

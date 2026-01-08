@@ -1,0 +1,61 @@
+<div
+  class="cart-backdrop"
+  *ngIf="isOpen()"
+  (click)="close()">
+</div>
+
+<div class="cart-drawer" *ngIf="isOpen()">
+
+  <div class="header">
+    <h2>Shopping Cart</h2>
+    <button class="close" (click)="close()">×</button>
+  </div>
+
+  <hr />
+
+  <div class="empty" *ngIf="items().length === 0">
+    <span class="material-symbols-outlined cart-icon">
+      shopping_cart
+    </span>
+    <h2>Your cart is empty</h2>
+    <p>Looks like you haven’t added anything yet</p>
+
+    <button routerLink="/products">Continue Shopping</button>
+  </div>
+
+  <div class="items" *ngIf="items().length > 0">
+
+    <div class="cart-item" *ngFor="let item of items()">
+      <img [src]="item.image" />
+
+      <div class="info">
+        <h4>{{ item.title }}</h4>
+        <p>
+          {{ item.quantity }} ×
+          <span>Rs. {{ item.price }}</span>
+        </p>
+      </div>
+
+      <button class="remove" (click)="cart.removeItem(item.id)">
+        ×
+      </button>
+    </div>
+
+    </div>
+    <div class="footer" *ngIf="items().length > 0">
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <b>Rs. {{ subtotal() }}</b>
+      </div>
+
+      <hr />
+
+      <div class="actions">
+        <button class="btn outline" (click)="goToCart()">Cart</button>
+        <button class="btn outline">Checkout</button>
+        <button class="btn outline">Comparison</button>
+      </div>
+    </div>
+
+  
+</div>

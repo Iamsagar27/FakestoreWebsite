@@ -1,0 +1,112 @@
+.login-wrapper {
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f4ff;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  .login-card {
+    background: #FFF3E3;
+    padding: 2.5rem 2rem;
+    width: 380px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    .login-header {
+      margin-bottom: 2rem;
+
+      .logo {
+        width: 60px;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        margin-bottom: 0.25rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #111;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #555;
+      }
+    }
+
+    form {
+      .form-group {
+        margin-bottom: 1.25rem;
+        text-align: left;
+
+        label {
+          display: block;
+          margin-bottom: 0.35rem;
+          font-size: 0.85rem;
+          color: #333;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.55rem 0.75rem;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          font-size: 0.9rem;
+          transition: border 0.3s;
+
+          &:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+          }
+        }
+      }
+
+      .btn-primary {
+        width: 100%;
+        padding: 0.6rem;
+        border-radius: 8px;
+        background: #4f46e5;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover:not(:disabled) {
+          background: #3730a3;
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      }
+
+      .error {
+        margin-top: 0.75rem;
+        color: #e11d48;
+        font-size: 0.85rem;
+        text-align: center;
+      }
+
+      .login-footer {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #555;
+
+        a {
+          color: #4f46e5;
+          margin-left: 0.25rem;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

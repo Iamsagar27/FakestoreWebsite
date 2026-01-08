@@ -1,0 +1,90 @@
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #eaeaea;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CONTAINER */
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 100px 40px; 
+}
+
+/* GRID */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1.3fr 2.2fr;
+  column-gap: 72px;
+  align-items: start; 
+}
+
+/* BRAND */
+.footer-brand h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 32px; 
+}
+
+.footer-brand p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #9f9f9f;
+  margin-top: 50px;
+}
+
+/* COLUMN TITLE */
+.footer-title {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #9f9f9f;
+  margin-bottom: 55px;
+}
+
+/* LINKS */
+.footer-col a {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 46px;
+}
+
+/* NEWSLETTER */
+.newsletter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.newsletter input {
+  width: 240px;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 6px 0;
+  font-size: 14px;
+  outline: none;
+}
+
+.newsletter button {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-bottom p {
+  font-size: 16px;
+}

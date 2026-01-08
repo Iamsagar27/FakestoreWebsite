@@ -1,0 +1,33 @@
+<app-loader [show]="loading"></app-loader>
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="login-header">
+      <img src="assets/WebsiteLogo.png" alt="Logo" class="logo" />
+      <h2>Welcome Back</h2>
+      <p>Login to your account</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" type="text" formControlName="username" placeholder="Enter username" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" placeholder="Enter password" />
+      </div>
+
+      <button type="submit" [disabled]="loading" class="btn-primary">
+        {{ loading ? 'Logging in...' : 'Login' }}
+      </button>
+
+      <p class="error" *ngIf="error">{{ error }}</p>
+
+      <div class="login-footer">
+        <span>Don't have an account?</span>
+        <a routerLink="/register">Sign Up</a>
+      </div>
+    </form>
+  </div>
+</div>

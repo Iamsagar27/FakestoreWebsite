@@ -1,0 +1,32 @@
+<div class="cart-item">
+  <img [src]="item.image" />
+
+  <div class="details">
+    <h4>{{ item.title }}</h4>
+    <p>₹ {{ item.price | number }}</p>
+
+    <select [value]="item.quantity" (change)="changeQty($event)">
+      <option *ngFor="let q of [1,2,3,4,5]" [value]="q">
+        {{ q }}
+      </option>
+    </select>
+  </div>
+
+  <button class="remove" (click)="remove.emit()">✕</button>
+</div>
+<div class="cart-item">
+  <img [src]="item.image" />
+
+  <div class="details">
+    <h4>{{ item.title }}</h4>
+    <p>₹ {{ item.price | number }}</p>
+
+    <select [value]="item.quantity" (change)="changeQty($event)">
+      <option *ngFor="let q of [1,2,3,4,5]" [value]="q">
+        {{ q }}
+      </option>
+    </select>
+  </div>
+
+  <button class="remove" (click)="remove.emit()">✕</button>
+</div>
