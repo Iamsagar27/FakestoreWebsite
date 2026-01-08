@@ -1,27 +1,36 @@
-# EcommerceApp
+# 🛒 FakeStore E-Commerce Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+A modern, fully responsive **e-commerce web application** built with **Angular**, inspired by the FakeStore API.  
+This project demonstrates real-world shopping features such as product listing, cart management, loaders, toasts, and routing.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ✨ Features
 
-## Code scaffolding
+- 🏠 **Home page** with hero section & featured products
+- 🛍️ **Product listing** (Shop page)
+- 🔍 **Product details page**
+- 🛒 **Cart functionality**
+  - Add / remove products
+  - Quantity update
+  - Product-count based badge
+- 🧾 **Cart drawer + Cart page**
+- 🔔 **Toast notifications** (success / error)
+- ⏳ **Global loader**
+- 📱 **Fully responsive UI**
+- 🔗 **Angular routing** with active menu highlighting
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🧑‍💻 Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Frontend**: Angular (Standalone Components)
+- **Styling**: SCSS
+- **State Management**: Angular Signals
+- **API**: FakeStore API
+- **Icons**: Google Material Symbols
 
-## Running unit tests
+## 🙋 Author
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- ** Sagar Gawade**
+- FrontEnd / Angular Developer
