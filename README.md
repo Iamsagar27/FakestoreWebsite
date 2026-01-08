@@ -32,5 +32,5 @@ This project demonstrates real-world shopping features such as product listing, 
 
 ## 🙋 Author
 
-- ** Sagar Gawade**
+- **Sagar Gawade**
 - FrontEnd / Angular Developer
